@@ -1,11 +1,11 @@
 provider "aws" {
-    region = "us-west-1"  
+  region = "us-east-1" # Change this to your desired region
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-0f8e81a3da6e2510a" # us-west-1
-  instance_type = "t2.micro"
+resource "aws_vpc" "my_vpc" {
+  cidr_block = "10.0.0.0/16" # Replace with your desired CIDR block
+
   tags = {
-      Name = "TF-Instance"
+    Name = "MyVPC"
   }
 }
