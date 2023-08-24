@@ -1,9 +1,11 @@
 provider "aws" {
-  region = "us-east-1" # Change this to your desired region
+  region = "ca-central-1"  
 }
 
 resource "aws_vpc" "my_vpc" {
-  cidr_block = "10.0.0.0/16" # Replace with your desired CIDR block
+  cidr_block = "10.0.0.0/16"  # Adjust the CIDR block according to your needs
+  enable_dns_support = true
+  enable_dns_hostnames = true
 
   tags = {
     Name = "MyVPC"
